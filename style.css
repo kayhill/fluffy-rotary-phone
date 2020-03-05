@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-body {
+html {
     font-family: AvenirLTPro-Black, sans-serif;
 }
 @font-face {
@@ -46,16 +42,17 @@ span:hover {
     overflow: hidden;
 }
 
-li {
+li {   
+    display: block;
     float: right;
-    padding: 20px;
     padding-top: 25px;
+    margin-right: 10px;
     font-size: 22px;
     font-weight: lighter;
     opacity: .75;
 }
 li a {
-    display: block;
+  display: inline-block;
     color: #08092e;
     text-align: center;
     text-decoration: none;
@@ -71,11 +68,13 @@ li button {
     width: 150px;
     height: 40px;
     border-radius: 20px;
-
 }
 li button:hover {
     background-color: teal;
     cursor: pointer;
+}
+nav {
+  z-index:1;
 }
 
 /*End header*/
@@ -83,10 +82,13 @@ li button:hover {
 
 div.hero {
     background-image: url('https://cdn.shopify.com/s/files/1/0035/9468/2435/files/hero-desktop-2x_1200x@2x.progressive.jpg?v=1572993627');
-    background-size: cover;
     width: 100%;
     height: 600px;
+    position: relative;
+    background-size: cover;
 }  
+
+
 h1 {
     color: teal;
     font-size: 66px;
@@ -101,11 +103,12 @@ h3 {
     font-size: 22px;
     letter-spacing: .5px;
 }
-.main-text {
-    margin-right: 55%;
+.main-text{
+    margin-right: 300px;
     margin-left: 150px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 30px;
+      
 }
 .main-video a {
     color: tomato;
@@ -143,8 +146,10 @@ button:hover {
 /*Begin How It Works Section*/
 
 .how-it-works {
+    position: relative;
     background-color:inherit;
-    height: 600px;
+    height: 800px;
+    margin-top: 100px;
 }
 
 .how-it-works-text {
@@ -167,14 +172,18 @@ button:hover {
 }
 .how-it-works img {
     height: 80px;
-    padding-left: 130px;
 }
 #how-it-works-table {
     width: 80%;
     align-content: center;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 50;
 }
+td {
+  text-align: center;
+}
+
 .get-reel-button {
     text-align: center;
     margin-top: 50px;
@@ -186,7 +195,6 @@ button:hover {
  }
  .get-reel-video {
     text-align: center;
-    margin-right: 275px;
  }
  /*Begin New Section - Make A Difference*/
  .make-a-difference {
@@ -207,18 +215,19 @@ button:hover {
 
 .the-problem-text {
     margin-left: 55%;
-    margin-right: 15%;
+    margin-right: 5%;
     margin-top: 160px;
-    text-align: left;
+    text-align: right;
 
 }
 #join-reel, #mission-link {
-    margin-left: 55%;
-    margin-right: 15%;
+    margin-left: 60%;
+    margin-right: auto;
 }
 #mission-link:hover {
     opacity: 50%;
     text-decoration: underline;
+    white-space: nowrap;
 }
 .the-problem {
     margin-top: 50px;
@@ -229,12 +238,10 @@ button:hover {
   background-image: url(https://cdn.shopify.com/s/files/1/0035/9468/2435/files/toile-2x_470x.jpg?v=1553038084);
   background-repeat: no-repeat;
   background-position: left;
-  background-position-x: 200px;
-  background-position-y: 50px;
-  background-size: 450px;
+  background-size: 50%;
 }
 .the-problem-head-text {
- text-align: center;
+   text-align: center;
 }
 .the-problem span {
     text-transform: uppercase;
