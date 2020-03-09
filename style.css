@@ -1,6 +1,10 @@
 html {
     font-family: AvenirLTPro-Black, sans-serif;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 @font-face {
     font-family: AvenirLTPro-Black;
     src: url(AvenirLTPro-Black.otf);
@@ -11,18 +15,27 @@ html {
   button {
       border: none;
   }
+
+  #help-button {
+      position: fixed;
+      bottom: 5px;
+      right: 10px;
+      text-transform: lowercase;
+      z-index: 999;
+  }
   /*Header*/
+
 .header-discount {
     background-color: #7578e0;
     height: 2.5em;
     color: white;
     text-transform: uppercase;
     font-size: 14px;
-    font-weight: 300;
     text-align: center;
     padding-top: 1em;
     font-weight: bold;
-    letter-spacing: .5px;
+    letter-spacing: 0.03em;
+
 }
 span:hover {
     text-decoration: underline;
@@ -32,36 +45,36 @@ span:hover {
 
 #reel-logo {
     width: 200px;
-    float: left;
- }
+    height: 100px;
+   }
 
 .nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-}
+    }
 
-li {   
-    display: block;
-    float: right;
+.nav-bar li {   
     padding-top: 25px;
     margin-right: 10px;
     font-size: 22px;
     font-weight: lighter;
     opacity: .75;
 }
-li a {
-  display: inline-block;
+.nav-bar li a {
+    display: inline-block;
     color: #08092e;
     text-align: center;
     text-decoration: none;
 }
-li a:hover {
+.nav-bar li a:hover {
     text-decoration-color: brown;
     text-decoration-line: underline;
 }
-li button { 
+.nav-bar li button, #help-button { 
     background-color: #08092e;
     color: white;
     font-size: 20px;
@@ -69,54 +82,57 @@ li button {
     height: 40px;
     border-radius: 20px;
 }
-li button:hover {
+.nav-bar li button:hover {
     background-color: teal;
     cursor: pointer;
 }
-nav {
-  z-index:1;
+div .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
 }
 
 /*End header*/
 /*Begin Hero */
 
-div.hero {
+.hero {
     background-image: url('https://cdn.shopify.com/s/files/1/0035/9468/2435/files/hero-desktop-2x_1200x@2x.progressive.jpg?v=1572993627');
-    width: 100%;
-    height: 600px;
-    position: relative;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 75px;
+    display: flex;
+
+    
 }  
-
-
+.hero-intro {
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: left;
+    margin-left: 10%;
+    padding-top: 75px;
+}
 h1 {
     color: teal;
     font-size: 66px;
     margin-bottom: -5px;
 }
 h2 {
-        color: teal;
-        font-size: 40px;
+    color: teal;
+    font-size: 40px;
 }
 h3 {
     color: teal;
     font-size: 22px;
-    letter-spacing: .5px;
+    letter-spacing: .03em;
 }
-.main-text{
-    margin-right: 300px;
-    margin-left: 150px;
-    margin-top: 100px;
-    margin-bottom: 30px;
-      
+.main-text {
+ max-width:500px;
 }
 .main-video a {
     color: tomato;
-    white-space: nowrap;
-}
-.main-video {
-    margin-left: 150px;
-}
+  }
 #main-video-play  {
     height: 18px;
 }
@@ -138,18 +154,14 @@ button:hover {
     opacity: 50%;
     cursor: pointer;
 }
-.start-button {
-    position: absolute;
-    margin-left: 150px;
-}
 
 /*Begin How It Works Section*/
 
 .how-it-works {
-    position: relative;
     background-color:inherit;
-    height: 800px;
     margin-top: 100px;
+    margin-bottom: 180px;
+    text-align: center;
 }
 
 .how-it-works-text {
@@ -161,29 +173,28 @@ button:hover {
     color:burly;
     font-size: 18px;
     padding-top: 100px;
-    margin-bottom: 100px;
 }
-.how-it-works p {
+.three-steps p {
     font-size: 16px;
     color: teal;
 }
-.how-it-works p, .how-it-works h2, .how-it-works h5 {
+.three-steps p, .three-steps h2, .three-steps h5 {
     text-align: center;
 }
-.how-it-works img {
+.three-steps img {
     height: 80px;
 }
-#how-it-works-table {
-    width: 80%;
+.three-steps {
+    width: 100%;
     align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 50;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-td {
-  text-align: center;
-}
-
+.three-steps div {
+ text-align: center;
+ padding-top: 50px;
+ }
 .get-reel-button {
     text-align: center;
     margin-top: 50px;
@@ -196,58 +207,71 @@ td {
  .get-reel-video {
     text-align: center;
  }
+ #get-reel-video {
+     margin-left: 0;
+ }
+
  /*Begin New Section - Make A Difference*/
  .make-a-difference {
+    display: flex;
+    justify-content: center;
+    position: relative;
     margin-top: 50px;
-    background-color: inherit;
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdORO01QBDFZJr0__JHeBt9gYMjGBzRw0xIJDuPGXLs8TegXdi');
+    width: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 1600px 500px;
     background-position: center center;
 }
  #make-a-difference-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 700px;
+    position: relative;
+    width: 90%;
+    height: 90%;
+    max-width: 616px;
+    max-height: 755px;
+    margin-top: -126px;
+    margin-bottom: -126px;
+   
+     }
+ #difference-text h2 {
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    font-size: 60px;
+    }
+ #difference-text {
+    position: absolute;
+    max-width: 500px;
+    bottom: -50px;
  }
 /*Begin New Section - The Problem */
 
-.the-problem-text {
-    margin-left: 55%;
-    margin-right: 5%;
-    margin-top: 160px;
-    text-align: right;
-
-}
-#join-reel, #mission-link {
-    margin-left: 60%;
-    margin-right: auto;
-}
-#mission-link:hover {
-    opacity: 50%;
-    text-decoration: underline;
-    white-space: nowrap;
-}
-.the-problem {
-    margin-top: 50px;
-    height: 700px;
-}
-
-.the-problem {
-  background-image: url(https://cdn.shopify.com/s/files/1/0035/9468/2435/files/toile-2x_470x.jpg?v=1553038084);
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: 50%;
-}
 .the-problem-head-text {
-   text-align: center;
-}
-.the-problem span {
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: 50px;
+ }
+.the-problem-head-text span {
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 50%;
     color:burly;
     font-size: 18px;
+    cursor: default;
+ }
+.the-problem {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    }
+.the-problem-image {
+   width: auto;
 }
-
+.the-problem-info {
+   margin-top: 100px;
+   width: 400px;
+}
+#mission-link:hover {
+    opacity: 50%;
+    text-decoration: underline;
+}
